@@ -13,6 +13,17 @@ def Head():
 	print("\t\t\tHey, Welcome! This is my TUI that makes Life Simple without memorizing the commands for RHEL8")
 	os.system("tput setaf 3")
 	print("\t\t\t---------------------------------------------------------------------------------------------")
+	
+#Username Password Auth Function
+def Auth():
+	passwd = getpass.getpass("Enter your Password :")
+	apass = "redhat"
+	if passwd != apass:
+		print("\n")
+		os.system("tput setaf 1")
+		print("Incorrect Password! Try Again.....")
+		Credits()
+		exit()
   
   # Display the Options
 def Task():
