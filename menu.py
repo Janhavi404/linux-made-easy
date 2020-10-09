@@ -127,3 +127,96 @@ def Local_remote():
 	return location
 
 
+#-----------------------------------Start of the TUI.------------------------------------------------------
+
+
+
+#------------------------------------Authentication--------------------------------------------------------
+#Calling Head
+Head()
+#Calling Task function 
+Task()
+os.system("tput setaf 7")
+#Calling Auth
+Auth()
+os.system("clear")
+
+
+#---------------------------------Local or Remote Option---------------------------------------------------
+#Calling Head
+Head()
+#Calling Task function 
+Task()
+#Calling Local_remote 
+location=Local_remote()
+if location == "R" or location == "r":
+		#Asking for IP Address of remote System
+		os.system("tput setaf 3")
+		print("Enter the IP Address of Remote System:", end="")
+		ip_address=input()
+		print("\n")
+os.system("clear")
+
+#-----------------------------------While Loop for continuity----------------------------------------------
+
+cont=True 
+#Declaring Cont Variable to continue Till False
+
+#Start of While Loop for Asking Options and Executing
+while(cont == True):  
+	
+	#Calling Head
+	Head()
+	#Calling Task function 
+	Task()
+
+	#If the task is for Local System then do this
+	if location == "L" or location == "l":
+		os.system("tput setaf 7")
+		print("You are in Local System")
+		print("\n")
+
+		#Calling Asking_option function
+		ch=Asking_option()
+		#Calling Options_local function
+		Options_local(ch)
+
+
+	#If the task for Remote System then do this
+	elif location == "R" or location == "r":
+		os.system("tput setaf 7")
+		print("You are in Remote System")
+		print("\n")
+
+		#Calling Asking_option function
+		ch=Asking_option()
+		#Calling Options_remote function	
+		Options_remote(ch)
+
+
+	#If not both Local or Remote then do this
+	else:
+		os.system("tput setaf 1")
+		print("Job Location Does not Supported!")
+		print("You can use Either (Local or Remote) System")
+		Credits()
+		print("\n")
+		exit()
+
+	print("\n")
+	os.system("tput setaf 7")
+	input("Enter to Continue.......")
+	os.system("clear")
+	print("\n")
+
+
+
+
+
+#------------------------------------------------Credits---------------------------------------------------
+##os.system("tput setaf 11")
+##print("\t\t\t\t\t\t\tMade By Gursimar Singh")
+#Outside While Loop for Exiting our TUI
+##print("\n")
+##os.system("tput setaf 7")
+
