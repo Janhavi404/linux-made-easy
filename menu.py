@@ -85,3 +85,32 @@ def Credits():
 	os.system("tput setaf 7")
 	
 
+#Function with various options and their working for Remote System call
+def Options_remote(ch):
+		os.system("tput setaf 6")
+		if int(ch)==1:
+			os.print("ssh {} date".format(ip_address))
+
+		elif int(ch)==2:
+			os.print("ssh {} cal".format(ip_address))
+
+		elif int(ch)==3:
+			print("Name of the User you want to Add: ", end="")
+			create_user=input()
+			os.print("ssh {} useradd {}".format(ip_address,create_user))
+
+		elif int(ch)==4:
+    			print("")	#Change print in all options to os.system when actually working with
+					#two systems. I am doing as I am doing alone.
+		elif int(ch)==5:
+    			print("")
+
+		elif int(ch)==6:
+    			print("")
+
+		elif int(ch)==7:
+			Credits()
+			exit()
+
+		else:
+    			print("Error! Option Not Supported")
