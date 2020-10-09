@@ -37,3 +37,51 @@ def Task():
 	Press 6: To Start Docker 
 	Press 7: To Exit
 	""")
+	
+#Function Asking the Available Options from user to perform that task
+def Asking_option():
+	os.system("tput setaf 2")
+	print("Enter Your Choice:", end="")
+	ch=input()	
+	print("\n")
+	return ch
+
+#Function with various options and their working for Local System call
+def Options_local(ch):
+		os.system("tput setaf 6")
+		if int(ch)==1:
+			os.system("date")
+
+		elif int(ch)==2:
+    			os.system("cal")
+
+		elif int(ch)==3:
+			print("Name of the User: ", end="")
+			create_user=input()
+			os.system("useradd {}".format(create_user))
+
+		elif int(ch)==4:
+    			os.system("")
+
+		elif int(ch)==5:
+    			os.system("")
+
+		elif int(ch)==6:
+    			os.system("systemctl start docker")
+
+		elif int(ch)==7:
+			Credits()
+			exit()
+
+		else:
+    			print("Error! Option Not Supported")
+
+
+#Functions for Credits
+def Credits():
+	os.system("tput setaf 11")
+	print("\t\t\t\t\t\t\tMade By Gursimar Singh")
+	print("\n")
+	os.system("tput setaf 7")
+	
+
