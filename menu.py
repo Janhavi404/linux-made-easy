@@ -114,3 +114,16 @@ def Options_remote(ch):
 
 		else:
     			print("Error! Option Not Supported")
+
+
+def Local_remote():
+	#Asking User Where to perform the job
+	os.system("tput setaf 7")
+	print("Where you want to perform the Job (Local/Remote) System)")
+	os.system("tput setaf 3")
+	print("Press Keyword L for Local   OR   Press Keyword R for Remote:", end="")
+	location=input()
+	print("\n")
+	return location
+
+
